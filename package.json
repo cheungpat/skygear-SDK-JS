@@ -69,7 +69,7 @@
     "dev": "gulp --type dev dev",
     "minify": "gulp --type production minify",
     "postinstall": "lerna bootstrap",
-    "prepublish": "gulp --type production prepublish",
+    "prepare": "gulp --type production prepublish",
     "test": "gulp --type dev",
     "deploy": "gulp deploy --type production",
     "deploy-latest": "gulp deploy --type production --latest",
