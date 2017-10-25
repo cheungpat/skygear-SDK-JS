@@ -22,6 +22,10 @@
       <label>Email</label>
       <span id="currentEmail"></span>
     </p>
+    <p>
+      <label>Error</label>
+      <span id="errorMessage"></span>
+    </p>
     <h4>Social Login</h4>
     <label>Google sign-in using Popup</label>
     <p>
@@ -40,9 +44,10 @@
     var token = document.getElementById("accessToken");
     var currentUsername = document.getElementById("currentUsername");
     var currentEmail = document.getElementById("currentEmail");
+    var errorMessage = document.getElementById("errorMessage");
     skygear.config({
       'endPoint': 'http://127.0.0.1:3000/',
-      'apiKey': 'my_skygear_key'
+      'apiKey': 'api_key'
     }).then(function(container) {
       m.textContent = container.endPoint;
       token.innerText = skygear.auth.accessToken;
@@ -65,22 +70,20 @@
       });
     };
     loginOAuthProviderWithPopup = function() {
-      var changeResult = document.getElementById("change-result");
-      skygear.auth.loginOAuthProviderWithPopup("google", {
-        'redirect_uri': 'https://app.myapp.com'
-      }).then(function(auth_url) {
+      skygear.auth.loginOAuthProviderWithPopup("google", {})
+      .then(function(authResult) {
         console.log('loginOAuthProviderWithPopup');
-        changeResult.innerText = 'loginOAuthProviderWithPopup';
-        console.log(auth_url);
+        token.innerText = skygear.auth.accessToken;
+        currentUsername.innerText = skygear.auth.currentUser.username;
+        currentEmail.innerText = skygear.auth.currentUser.email;
       }, function(error) {
-        console.log('loginOAuthProviderWithPopup fail');
-        console.log(error);
-        changeResult.innerText = error;
+        console.error('loginOAuthProviderWithPopup fail', error);
+        errorMessage.innerText = error;
       });
     };
     loginOAuthProviderWithRedirect = function() {
       skygear.auth.loginOAuthProviderWithRedirect("google", {
-        'redirect_uri': 'https://app.myapp.com'
+        'redirect_uri': window.location.href
       });
     }
   </script>
