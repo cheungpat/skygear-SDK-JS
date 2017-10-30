@@ -28,7 +28,7 @@
   "dependencies": {
     "skygear-core": "^1.1.0",
     "skygear-forgot-password": "^1.1.0",
-    "skygear-sso": "^1.1.0"
+    "skygear-sso": "^1.0.0"
   },
   "bugs": {
     "url": "https://github.com/SkygearIO/skygear-SDK-JS/issues"
