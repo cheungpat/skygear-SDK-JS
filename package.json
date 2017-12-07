@@ -78,7 +78,11 @@
     "prepare": "lerna bootstrap && gulp --type production prepublish"
   },
   "license": "Apache-2.0",
-  "dependencies": {},
+  "dependencies": {
+    "skygear-core": "./packages/skygear-core",
+    "skygear-forgot-password": "./packages/skygear-forgot-password",
+    "skygear-sso": "./packages/skygear-sso"
+  },
   "bugs": {
     "url": "https://github.com/SkygearIO/skygear-SDK-JS/issues"
   },
