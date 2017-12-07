@@ -9,14 +9,6 @@
     "url": "git+https://github.com/SkygearIO/skygear-SDK-JS.git"
   },
   "author": "rickmak <rick.mak@gmail.com> (https://skygear.io)",
-  "files": [
-    "cloud.js",
-    "bin.js",
-    "asset.js",
-    "react-native.js",
-    "dist"
-  ],
-  "main": "dist/index.js",
   "keywords": [
     "SDK",
     "skygear"
@@ -84,10 +76,6 @@
     "lerna": "lerna",
     "example": "gulp --type dev example",
     "prepare": "lerna bootstrap && gulp --type production prepublish"
-  },
-  "bin": {
-    "skygear-node": "./bin.js",
-    "skygear-asset": "./asset.js"
   },
   "license": "Apache-2.0",
   "dependencies": {},
