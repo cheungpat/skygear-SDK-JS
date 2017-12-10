@@ -13,7 +13,8 @@
     "bin.js",
     "asset.js",
     "react-native.js",
-    "dist"
+    "dist",
+    "package.json"
   ],
   "main": "dist/index.js",
   "keywords": [
